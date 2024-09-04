@@ -7,7 +7,7 @@ import React from "react";
 
 // Take data from API
 const getData = async () => {
-  const res = await fetch(`next-js-rendering-chi.vercel.app/api/blog`, {next: {revalidate: 3600}})
+  const res = await fetch(`http://localhost:3000/api/blog`, {next: {revalidate: 3600}})
 
   if (!res.ok) {
     throw new Error("Database is dead bruh")

@@ -7,7 +7,7 @@ import React from "react";
 
 // Take data from API
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/blog", {next: {revalidate: 3600}})
+  const res = await fetch(`${process.env.URL_DEPLOY}/api/blog`, {next: {revalidate: 3600}})
 
   if (!res.ok) {
     throw new Error("Database is dead bruh")
@@ -145,3 +145,7 @@ const Home = async () => {
 };
 
 export default Home;
+
+
+// setup .env vercel - server
+// http://localhost:3000 - Not in real work -> Domain name of the server
